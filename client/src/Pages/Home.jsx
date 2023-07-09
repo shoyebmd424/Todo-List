@@ -98,6 +98,7 @@ const Home = () => {
                     <thead>
                       <tr>
                         <th scope="col">Serial Number</th>
+                        <th scope="col">Id</th>
                         <th scope="col">Title</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
@@ -108,7 +109,10 @@ const Home = () => {
                       {alldata?.map((item, key) => (
                         <tr key={key}>
                           <th scope="row">{key + 1}</th>
-                          <td>{item?.title}</td>
+                          <td className="text-uppercase">
+                            {item?._id?.substring(18)}
+                          </td>
+                          <td className="text-capitalize">{item?.title}</td>
                           {/* <td>{item.description}</td> */}
                           <td>
                             <button

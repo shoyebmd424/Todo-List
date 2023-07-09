@@ -57,7 +57,7 @@ const Update = ({ data, openEditor, updated }) => {
                     <h5>
                       <span className="text-info">Id</span>:{" "}
                       <span className="w-50 text-uppercase text-light bg-secondary">
-                        {data?._id?.substring(0, 6)}
+                        {data?._id?.substring(18)}
                       </span>
                     </h5>
                   </div>
