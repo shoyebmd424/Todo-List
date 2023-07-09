@@ -14,6 +14,7 @@ const Home = () => {
   const [alldata, setAlldata] = useState([]);
   const CustomId = "toastId";
   const { data, loading } = useFetch("/");
+  console.log(data);
   const HandleView = async (id) => {
     try {
       if (id) {
@@ -67,7 +68,6 @@ const Home = () => {
   useEffect(() => {
     setAlldata(data);
   }, [data]);
-  console.log(openEditor);
   return (
     <>
       <Layout>
