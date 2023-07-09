@@ -14,7 +14,6 @@ const Home = () => {
   const [alldata, setAlldata] = useState([]);
   const CustomId = "toastId";
   const { data, loading } = useFetch("/");
-  console.log(data);
   const HandleView = async (id) => {
     try {
       if (id) {
@@ -82,7 +81,12 @@ const Home = () => {
           />
         </div>
         <div className="my-4">
-          <h1 className="text-center">Todos</h1>
+          <div className="d-flex justify-content-evenly">
+            <h1 className="text-center">Todos</h1>
+            <Link to="/add-item" className="btn py-2 px-4 btn-success">
+              <h5> Add Item</h5>
+            </Link>
+          </div>
           <div className="container-fluids">
             <div className="row">
               {loading ? (
@@ -134,11 +138,6 @@ const Home = () => {
                       ))}
                     </tbody>
                   </table>
-                  <div>
-                    <Link to="/add-item" className="btn py-2 px-4 btn-primary">
-                      <h5> Add Item</h5>
-                    </Link>
-                  </div>
                 </div>
               )}
             </div>

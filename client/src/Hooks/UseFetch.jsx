@@ -9,7 +9,7 @@ const useFetch = (url) => {
     try {
       const res = await Axios.get(url);
       setdata(res.data.message);
-      console.log(res);
+      // console.log(res);
     } catch (error) {
       seterror(error);
     }

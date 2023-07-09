@@ -10,8 +10,11 @@ export const saveItem = async (req, res) => {
         message: "This item already added....",
       });
     }
-    const item = await ToDoSchema(req.body).save();
-    res.send({ success: true, message: item });
+    await ToDoSchema(req.body).save();
+    return res.send({
+      success: true,
+      message: "Item successfully added on your list....",
+    });
   } catch (error) {
     console.log(error);
     res.send({ success: false, message: "Some thing went wrong" });

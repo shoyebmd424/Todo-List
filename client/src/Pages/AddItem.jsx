@@ -9,7 +9,7 @@ const AddItem = () => {
     e.preventDefault();
     try {
       const res = await Axios.post("/save", { title, description });
-      if (res & res.data.success) {
+      if (res && res.data.success) {
         toast.success(res.data.message);
       } else {
         toast.error(res.data.message);
